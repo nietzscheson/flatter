@@ -1,0 +1,2 @@
+def flatter(object):
+    pass
