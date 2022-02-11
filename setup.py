@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
     name="flatter",
@@ -12,6 +12,11 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/nietzscheson/flatter",
     install_requires=[],
+    extras_require={
+        "dev": [
+            "pre-commit==2.16.0",
+        ],
+    },
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
