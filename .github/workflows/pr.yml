@@ -1,0 +1,16 @@
+name: Build
+
+on: [pull_request]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Install dev dependencies
+              run: make dependencies.dev
+            - name: Check Format
+              run: make check
+            - name: Run Tests
+              run: make test
