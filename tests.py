@@ -1,4 +1,5 @@
 import unittest
+
 from flatter import flatter
 
 
@@ -13,4 +14,7 @@ class FlatterTestCase(unittest.TestCase):
             flatter([[0, 1], [[2, [3, [4, [5, [6]]]]]], [7, 8]]),
             [0, 1, 2, 3, 4, 5, 6, 7, 8],
         )
-        self.assertEqual(flatter(["f", ["l", ["a", ["t", ["t", ["e", ["r"]]]]]]]), ["f","l","a","t","t","e","r"])
+        self.assertEqual(
+            flatter(["f", ["l", ["a", ["t", ["t", ["e", ["r"]]]]]]]),
+            ["f", "l", "a", "t", "t", "e", "r"],
+        )
