@@ -1,3 +1,3 @@
-from flatter import flatter
+from flatter.flatter import flatter
 
-__all__ = [flatter]
+__all__ = ["flatter"]
