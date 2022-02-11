@@ -29,25 +29,15 @@ flatter = flatter([1, 2, [3, [4]]])
 ```bash
 $ git clone https://github.com/nietzscheson/flatter
 ```
-This results in the following running containers:
+2. Create the virtual environment:
 ```bash
-> $ docker-compose ps
-               Name                              Command                  State                        Ports
-------------------------------------------------------------------------------------------------------------------------------
-core                                  /bin/sh -c gunicorn --bind ...   Up             0.0.0.0:8000->8000/tcp,:::8000->8000/tcp
-postgres                              docker-entrypoint.sh postgres    Up (healthy)   0.0.0.0:5432->5432/tcp,:::5432->5432/tcp
-raizen-iot-challenge_default-core_1   python3                          Exit 0
+$ python -m venv venv
 ```
-4. Testing features:
+4. Install the dev dependencies:
+```bash
+$ make dependencies.dev
+```
+5. Run test:
 ```bash
 $ make test
 ```
-4. Import the dataset:
-```bash
-$ make import
-```
-The resources are:
-
-- http://localhost:8000/highest-co2
-- http://localhost:8000/hottest-temperature
-- http://localhost:8000/highest-humidity
